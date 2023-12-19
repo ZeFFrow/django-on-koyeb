@@ -1,0 +1,16 @@
+<form id="post_form" method="post" action="" enctype="multipart/form-data">
+ 
+    {% csrf_token %}
+    {% for hidden in postForm.hidden_fields %}
+        {{ hidden }}
+    {% endfor %}
+ 
+    {% for field in postForm %}
+        {{ field }} <br />
+    {% endfor %}
+
+    <input type="file" name="name" multiple><br><br>
+ 
+ 
+    <input type="submit" name="submit" value="Submit" />
+</form>
